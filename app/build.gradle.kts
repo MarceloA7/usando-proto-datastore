@@ -56,6 +56,7 @@ dependencies {
     implementation(libs.firebase.components)
     ksp(libs.hilt.compiler)
     implementation(libs.datastore.core)
+    implementation(libs.datastore)
     implementation(libs.protobuf.javalite)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -1,7 +1,10 @@
 package com.marcelo.usandoprotodatastore.data.datastore
 
+import android.content.Context
 import androidx.datastore.core.CorruptionException
+import androidx.datastore.core.DataStore
 import androidx.datastore.core.Serializer
+import androidx.datastore.dataStore
 import com.google.protobuf.InvalidProtocolBufferException
 import com.marcelo.usandoprotodatastore.datastore.UserPreferences
 import java.io.InputStream
@@ -19,3 +22,9 @@ object UserPreferencesSerializer : Serializer<UserPreferences> {
 
     override suspend fun writeTo(t: UserPreferences, output: OutputStream) = t.writeTo(output)
 }
+
+val Context.userPreferencesStore: DataStore<UserPreferences> by dataStore(
+    fileName = "user_prefs.pb",
+    serializer = UserPreferencesSerializer
+)
+
