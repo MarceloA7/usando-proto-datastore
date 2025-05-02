@@ -8,5 +8,4 @@ class UserViewModel @Inject constructor(
     val fakeUserRepository: FakeUserRepository
 ):ViewModel() {
 
-
 }

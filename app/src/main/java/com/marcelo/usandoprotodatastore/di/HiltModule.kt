@@ -18,12 +18,6 @@ object HiltModule {
 
     @Provides
     @Singleton
-    fun providerFakeUserRepository():FakeUserRepository{
-        return FakeUserRepository()
-    }
-
-    @Provides
-    @Singleton
     fun providerDataStore(@ApplicationContext context: Context):DataStore<UserPreferences>{
         return context.userPreferencesStore
     }
