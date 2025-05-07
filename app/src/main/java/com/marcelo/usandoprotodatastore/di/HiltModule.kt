@@ -2,9 +2,9 @@ package com.marcelo.usandoprotodatastore.di
 
 import android.content.Context
 import androidx.datastore.core.DataStore
+import com.marcelo.usandoprotodatastore.data.datastore.userPreferencesStore
 import com.marcelo.usandoprotodatastore.data.repository.FakeUserRepository
 import com.marcelo.usandoprotodatastore.datastore.UserPreferences
-import com.marcelo.usandoprotodatastore.data.datastore.userPreferencesStore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,7 +18,13 @@ object HiltModule {
 
     @Provides
     @Singleton
-    fun providerDataStore(@ApplicationContext context: Context):DataStore<UserPreferences>{
+    fun providerDataStore(@ApplicationContext context: Context): DataStore<UserPreferences> {
         return context.userPreferencesStore
+    }
+
+    @Provides
+    @Singleton
+    fun providerFakeUser():FakeUserRepository{
+        return FakeUserRepository()
     }
 }

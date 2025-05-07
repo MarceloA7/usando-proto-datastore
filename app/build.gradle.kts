@@ -58,6 +58,8 @@ dependencies {
     implementation(libs.datastore.core)
     implementation(libs.datastore)
     implementation(libs.protobuf.javalite)
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.navigation.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
